@@ -1,0 +1,32 @@
+.container {
+  height: 640px;
+  width: 640px;
+  background: url(/src/assets/character_walking.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: walk 0.5s step-end infinite forwards;
+  animation-play-state: paused;
+
+  &.walk {
+    animation-play-state: running;
+  }
+
+  &.left {
+    transform: scaleX(-1);
+  }
+}
+
+@keyframes walk {
+  0% {
+    background-position: -640px 0;
+  }
+  33% {
+    background-position: -1280px 0;
+  }
+  66% {
+    background-position: -1920px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
